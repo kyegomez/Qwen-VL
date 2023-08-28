@@ -41,11 +41,11 @@ from transformers import (
     set_seed,
 )
 
-# from Andromeda.model import Andromeda
-from qwen.transformer import Transformer
 from qwen.model import QwenVL
-# state = AcceleratorState()
+from qwen.transformer import Transformer
+from qwen.utils import StableAdamWUnfused
 
+# state = AcceleratorState()
 
 logger = get_logger(__name__, log_level="INFO")
 
