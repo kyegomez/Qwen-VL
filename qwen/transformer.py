@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from einops import pack, rearrange, reduce, repeat, unpack
 from torch import Tensor, einsum, nn
 
-from palme.attend import Attend, Intermediates
+from qwen.attend import Attend, Intermediates
 
 
 def exists(val):
