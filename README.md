@@ -28,6 +28,23 @@ print(output.shape)
 
 ----
 
+# Inference
+```python
+
+from qwen.inference import QwenVLChat
+
+
+qwen_chat = QwenVLChat(model_name="Qwen/Qwen-VL-Chat", device_map="cuda")
+response = qwen_chat.chat([
+    {"image": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg"},
+    {"text": "这是什么?"}
+])
+print(response)
+
+
+
+```
+
 
 # Training
 * [There is a file with a table of all the datasets used in the paper here](docs/datasets.md)
