@@ -70,9 +70,6 @@ For more information, refer to the [Training SOP](DOCs/TRAINING.md).
 
 # Citations
 
-Citation
---------
-
 Please use the following to cite this work:
 
 ```latex
