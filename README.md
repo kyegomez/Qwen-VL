@@ -50,8 +50,6 @@ if __name__ == '__main__':
 
 ```
 
-## 📚 Training
-
 1. Set the environment variables:
    - `ENTITY_NAME`: Your wandb project name
    - `OUTPUT_DIR`: Directory to save the weights (e.g., `./weights`)
@@ -67,3 +65,25 @@ if __name__ == '__main__':
 
 For more information, refer to the [Training SOP](DOCs/TRAINING.md).
 
+
+----
+
+# Citations
+
+Citation
+--------
+
+Please use the following to cite this work:
+
+```latex
+@article{bai2023qwen,
+  title={Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities},
+  author={Bai, Jinze and Bai, Shuai and Yang, Shusheng and Wang, Shijie and Tan, Sinan and Wang, Peng and Lin, Junyang and Zhou, Chang and Zhou, Jingren},
+  journal={arXiv preprint arXiv:2308.12966},
+  year={2023},
+  url={https://doi.org/10.48550/arXiv.2308.12966}
+}
+
+```
+
+For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966).
