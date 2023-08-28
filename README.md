@@ -26,7 +26,11 @@ print(output.shape)
 
 ```
 
+----
+
+
 # Training
+* [There is a file with a table of all the datasets used in the paper here](docs/datasets.md)
 
 ```python
 from qwen.train import Train
@@ -68,6 +72,14 @@ For more information, refer to the [Training SOP](DOCs/TRAINING.md).
 
 ----
 
+
+
+# Todo
+
+-[] Position aware vision language adapter, compresses image features. Singer layer cross attention module inited randomly => group of trainable embeddings as query vectors + image features from the visual encoder as keys for cross attention ops => OUTPUT: compresses visual feature sequence to a fixed lnegth of 256, 2d absolute positional encodings are integrated into the cross attentions mechanisms query key pairs => compressed feature sequence of length of 256 => fed into decoder llm
+
+-[] Bounding Boxes, for any given accurate bounding box, a norm process is applied in the range [0, 1000] and transformed into a string format (Xtope, Ytople)(Xottomright, Ybottomright) -> the string is tokenized as text and does not require positional vocabulary. Detection strings and regular text strings, two special tokens <box> and </box> are added to the beginning and end of the bounding box string. + another sed of special tokens (<ref> and </ref>) is introduced.
+
 # Citations
 
 Please use the following to cite this work:
@@ -84,3 +96,5 @@ Please use the following to cite this work:
 ```
 
 For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966).
+
+

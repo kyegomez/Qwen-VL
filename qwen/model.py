@@ -18,14 +18,14 @@ class QwenVLTokenizer:
             self.processor = CLIPProcessor.from_pretrained("laion/CLIP-ViT-L-14-laion2B-s32B-b82K")
             self.tokenizer = AutoTokenizer.from_pretrained(
                 "EleutherAI/gpt-neox-20b",
-                additional_special_tokens=["<image>", "</image>"],
+                additional_special_tokens=["<img>", "</img>"],
                 eos_token ="<eos>",
                 pad_token="<pad>",
                 extra_ids=0,
                 model_max_length=8192
             )
 
-            self.im_idx, self.im_end_idx = self.tokenizer.convert_tokens_to_ids(["<image>", "</image>"])
+            self.im_idx, self.im_end_idx = self.tokenizer.convert_tokens_to_ids(["<img>", "</img>"])
         except Exception as e:
             print(f"Error init tokenizer: {e}")
 
@@ -60,7 +60,7 @@ class QwenVLTokenizer:
             attention_mask = torch.cat([dummy_image_features, attention_mask], dim=1)
             return {
                 "text_tokens": text_tokens,
-                "images": self.tokenize_images(sample["image"]),
+                "images": self.tokenize_images(sample["img"]),
                 "labels": only_text_tokens,
                 "attention_mask": attention_mask,
             }

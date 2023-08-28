@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "qwen"
-version = "0.0.8"
+version = "0.0.9"
 description = "Qwen VL - Pytorch"
 authors = ["Kye Gomez <kye@apac.ai>"]
 license = "MIT"
