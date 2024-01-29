@@ -2,7 +2,8 @@
 
 
 # Qwen-VL
-My personal implementation of the model from "Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities", they haven't released model code yet sooo...
+My personal implementation of the model from "Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities", they haven't released model code yet sooo... 
+For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966).
 
 
 # Install
@@ -101,7 +102,7 @@ For more information, refer to the [Training SOP](DOCs/TRAINING.md).
 
 Please use the following to cite this work:
 
-```latex
+```bibtex
 @article{bai2023qwen,
   title={Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities},
   author={Bai, Jinze and Bai, Shuai and Yang, Shusheng and Wang, Shijie and Tan, Sinan and Wang, Peng and Lin, Junyang and Zhou, Chang and Zhou, Jingren},
@@ -111,7 +112,3 @@ Please use the following to cite this work:
 }
 
 ```
-
-For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966).
-
-
