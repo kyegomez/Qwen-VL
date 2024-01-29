@@ -3,7 +3,7 @@
 
 # Qwen-VL
 My personal implementation of the model from "Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities", they haven't released model code yet sooo... 
-For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966).
+For more details, please refer to the [full paper](https://doi.org/10.48550/arXiv.2308.12966). The model architecture is basically as in the paper: img -> vit -> multi-modal fusion layer with learnable query embeddings, and then pass -> into Qwen LLM through projection layer.
 
 
 # Install
