@@ -56,6 +56,8 @@ class QwenVL(nn.Module):
         cross_attend: bool = True,
         attn_flash: bool = True,
         qk_norm: bool = True,
+        *args,
+        **kwargs
     ):
         super(QwenVL, self).__init__()
 
@@ -81,6 +83,8 @@ class QwenVL(nn.Module):
                 attn_kv_heads=attn_kv_heads,
                 attn_flash=attn_flash,
                 qk_norm=qk_norm,
+                *args,
+                **kwargs
             ),
         )
 

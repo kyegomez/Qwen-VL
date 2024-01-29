@@ -14,83 +14,21 @@ For more details, please refer to the [full paper](https://doi.org/10.48550/arX
 # Usage
 ```python
 
+# Importing the necessary libraries
 import torch
-from qwen.model import QwenVL
+from qwen import Qwen
 
-#usage
+# Creating an instance of the Qwen model
+model = Qwen()
+
+# Generating random text and image tensors
+text = torch.randint(0, 20000, (1, 1024))
 img = torch.randn(1, 3, 256, 256)
-caption = torch.randint(0, 20000, (1, 1024))
 
-model = QwenVL()
-output = model(img, caption)
-print(output.shape)
+# Passing the image and text tensors through the model
+out = model(img, text)  # (1, 1024, 20000)
 
 ```
-
-----
-
-# Inference
-```python
-
-from qwen.inference import QwenVLChat
-
-
-qwen_chat = QwenVLChat(model_name="Qwen/Qwen-VL-Chat", device_map="cuda")
-response = qwen_chat.chat([
-    {"image": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg"},
-    {"text": "这是什么?"}
-])
-print(response)
-
-
-
-```
-
-
-# Training
-* [There is a file with a table of all the datasets used in the paper here](docs/datasets.md)
-
-```python
-from qwen.train import Train
-
-
-def train():
-    os.environ['MASTER_ADDR'] #'localhost'
-    os.environ['MASTER_PORT'] #= '9994'
-    
-    # # [CRITICAL] Pay attention to this when scaling to multiple GPUs and clusters
-    os.environ['RANK']       #= str(0) # Number of nodes (servers)
-    os.environ['WORLD_SIZE'] # = str(torch.cuda.device_count())
-
-    dist.init_process_group(backend='nccl') #init_method="env://")
-    
-    Train()
-
-if __name__ == '__main__':
-    train()
-
-
-```
-
-1. Set the environment variables:
-   - `ENTITY_NAME`: Your wandb project name
-   - `OUTPUT_DIR`: Directory to save the weights (e.g., `./weights`)
-   - `MASTER_ADDR`: For distributed training
-   - `MASTER_PORT` For master port distributed training
-   - `RANK`- Number of nodes services
-   - `WORLD_SIZE` Number of gpus
-
-2. Configure the training:
-   - Accelerate Config
-   - Enable Deepspeed 3
-   - Accelerate launch train_distributed_accelerate.py
-
-For more information, refer to the [Training SOP](DOCs/TRAINING.md).
-
-
-----
-
-
 
 # Todo
 
